@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../components/Button'
 
 const PersonalInfo = () => {
   return (
@@ -132,6 +133,7 @@ const PersonalInfo = () => {
             </div>
           </div>
         </div>
+        <Button text={"Next: Projects"}/>
         </div>
   )
 }
