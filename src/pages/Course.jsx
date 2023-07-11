@@ -1,24 +1,35 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { resumeContext } from "../context";
 
 const people = [
-  { name: "Wade Cooper" },
-  { name: "Arlene Mccoy" },
-  { name: "Devon Webb" },
-  { name: "Tom Cook" },
-  { name: "Tanya Fox" },
-  { name: "Hellen Schmidt" },
+  { name: "Software Development" },
+  { name: "Business Administration" },
+  { name: "IT services" },
+  { name: "Architecture" },
+  { name: "Bakery" },
 ];
 
 function Course() {
+  const { resume, setResume } = useContext(resumeContext);
   const [selected, setSelected] = useState(people[0]);
+
+  const handleCourseSelection = (value) => {
+    setSelected(value);
+    setResume((prevResume) => ({
+      ...prevResume,
+      course: value.name,
+    }));
+    console.log(resume);
+  };
 
   return (
     <div className="fixed top-16 w-72">
-      <Listbox value={selected} onChange={setSelected}>
+      Which course at Sait?
+      <Listbox value={selected} onChange={handleCourseSelection}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">{selected.name}</span>
@@ -68,11 +79,9 @@ function Course() {
           </Transition>
         </div>
       </Listbox>
-     <Link to="/personalInfo">
-     <Button text={"Next: PersonalInfo"}/>
-     </Link>
-      
-      
+      <Link to="/personalInfo">
+        <Button text={"Next: PersonalInfo"} />
+      </Link>
     </div>
   );
 }

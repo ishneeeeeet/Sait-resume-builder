@@ -3,7 +3,9 @@ import React, { createContext, useState } from "react";
 const resumeContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [resume, setResume] = useState({});
+  const [resume, setResume] = useState({
+    course: "IT",
+  });
 
   // Provide a value to the resumeContext.Provider
   return (
