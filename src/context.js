@@ -9,7 +9,7 @@ const ContextProvider = ({ children }) => {
 
   // Provide a value to the resumeContext.Provider
   return (
-    <resumeContext.Provider value={(resume, setResume)}>
+    <resumeContext.Provider value={{ resume, setResume }}>
       {children}
     </resumeContext.Provider>
   );
