@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
-import { resumeContext } from '../context';
+import React, { useContext } from "react";
+import { resumeContext } from "../context";
 
 const Resume = () => {
   const { resume } = useContext(resumeContext);
   return (
-    <div>{resume.course}</div>
+    <div>
+      <div> course: {resume.course}</div>
+      <div> name: {resume.fname}</div>
+      <div>lname: {resume.lname}</div>
+    </div>
   );
-}
+};
 
 export default Resume;

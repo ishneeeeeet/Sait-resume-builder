@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { resumeContext } from "../context";
 
 const PersonalInfo = () => {
+  const { setResume } = useContext(resumeContext);
+  const [fname, setFname] = useState("")
+
+  const handlenameChange = (event) => {
+    const value = event.target.value;
+    const item = event.target.name
+    setFname(value);
+    setResume((prevResume) => ({
+      ...prevResume,
+      [item]: value,
+    }));
+  };
+
+
   return (
     <div className="space-x-12">
       <div className="border-b border-gray-900/10 pb-12">
@@ -23,8 +38,10 @@ const PersonalInfo = () => {
             </label>
             <div className="mt-2">
               <input
+              onChange={handlenameChange}
                 type="text"
-                name="first-name"
+                value={fname}
+                name="fname"
                 id="first-name"
                 autoComplete="given-name"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -41,8 +58,9 @@ const PersonalInfo = () => {
             </label>
             <div className="mt-2">
               <input
+              onChange={handlenameChange}
                 type="text"
-                name="last-name"
+                name="lname"
                 id="last-name"
                 autoComplete="family-name"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
