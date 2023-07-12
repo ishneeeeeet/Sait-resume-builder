@@ -5,18 +5,16 @@ import { resumeContext } from "../context";
 
 const PersonalInfo = () => {
   const { setResume } = useContext(resumeContext);
-  const [fname, setFname] = useState("")
 
   const handlenameChange = (event) => {
     const value = event.target.value;
-    const item = event.target.name
-    setFname(value);
+    const item = event.target.name;
+
     setResume((prevResume) => ({
       ...prevResume,
       [item]: value,
     }));
   };
-
 
   return (
     <div className="space-x-12">
@@ -38,9 +36,8 @@ const PersonalInfo = () => {
             </label>
             <div className="mt-2">
               <input
-              onChange={handlenameChange}
+                onChange={handlenameChange}
                 type="text"
-                value={fname}
                 name="fname"
                 id="first-name"
                 autoComplete="given-name"
@@ -58,7 +55,7 @@ const PersonalInfo = () => {
             </label>
             <div className="mt-2">
               <input
-              onChange={handlenameChange}
+                onChange={handlenameChange}
                 type="text"
                 name="lname"
                 id="last-name"
@@ -77,7 +74,7 @@ const PersonalInfo = () => {
             </label>
             <div className="mt-2">
               <input
-              onChange={handlenameChange}
+                onChange={handlenameChange}
                 id="email"
                 name="email"
                 type="email"
@@ -108,8 +105,6 @@ const PersonalInfo = () => {
             </div>
           </div>
 
-          
-
           <div className="sm:col-span-2 sm:col-start-1">
             <label
               htmlFor="city"
@@ -119,7 +114,7 @@ const PersonalInfo = () => {
             </label>
             <div className="mt-2">
               <input
-              onChange={handlenameChange}
+                onChange={handlenameChange}
                 type="text"
                 name="city"
                 id="city"
@@ -138,7 +133,7 @@ const PersonalInfo = () => {
             </label>
             <div className="mt-2">
               <input
-              onChange={handlenameChange}
+                onChange={handlenameChange}
                 type="text"
                 name="region"
                 id="region"
@@ -147,8 +142,6 @@ const PersonalInfo = () => {
               />
             </div>
           </div>
-
-          
         </div>
       </div>
       <Link to="/projects">
