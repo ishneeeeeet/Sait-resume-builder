@@ -3,11 +3,14 @@ import { resumeContext } from "../context";
 
 const Resume = () => {
   const { resume } = useContext(resumeContext);
+
   return (
     <div>
-      <div> course: {resume.course}</div>
-      <div> name: {resume.fname}</div>
-      <div>lname: {resume.lname}</div>
+      {Object.entries(resume).map(([key, value]) => (
+        <div key={key}>
+          {key}: {value}
+        </div>
+      ))}
     </div>
   );
 };
