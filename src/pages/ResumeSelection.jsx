@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const ResumeSelection = () => {
   return (
-    <div>ResumeSe</div>
-  )
-}
+    <>
+      <div>Select your resume</div>
 
-export default ResumeSelection
+      <Link to="/personalinfo">
+        <Button text={"Next: Personal Info"} />
+      </Link>
+    </>
+  );
+};
+
+export default ResumeSelection;

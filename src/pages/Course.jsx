@@ -79,8 +79,8 @@ function Course() {
           </Transition>
         </div>
       </Listbox>
-      <Link to="/personalInfo">
-        <Button text={"Next: PersonalInfo"} />
+      <Link to="/resumeselection">
+        <Button text={"Next: Select Resume"} />
       </Link>
       {console.log(resume.course)}
     </div>
