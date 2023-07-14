@@ -5,7 +5,7 @@ import PersonalInfo from "./pages/PersonalInfo";
 import { Routes, Route } from "react-router-dom";
 import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
-import ResumeSelection from "./pages/ResumeSelection";
+import TemplateSelection from "./pages/TemplateSelection";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/course" element={<Course />} /> 
-        <Route path="/resumeselection" element={<ResumeSelection />} /> 
+        <Route path="/templateselection" element={<TemplateSelection />} /> 
         <Route path="/personalinfo" element={<PersonalInfo />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
