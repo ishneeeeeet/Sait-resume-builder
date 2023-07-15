@@ -27,14 +27,14 @@ const TemplateSelection = () => {
             }`}
           >
             <Template1 />
-            {selectedTemplate === "Template1" && (
+             
               <button
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 selected"
                 onClick={() => handleTemplateSelect("Template1")}
               >
                 Select
               </button>
-            )}
+            
           </div>
         )}
         {resume.course === "Bakery" && (
