@@ -7,7 +7,7 @@ const Template1 = ({resume}) => {
       <div className="mb-8">
         <h2 className="text-xl font-bold mb-2">Personal Information</h2>
         <p className="text-gray-700">Name: {resume? resume.fname : "Name"}</p>
-        <p className="text-gray-700">Email: {resume? resume.fname : "Email"}</p>
+        <p className="text-gray-700">Email: {resume? resume.email : "Email"}</p>
         <p className="text-gray-700">Phone: (123) 456-7890</p>
       </div>
       <div className="mb-8">
