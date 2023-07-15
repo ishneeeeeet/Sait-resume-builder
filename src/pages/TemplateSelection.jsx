@@ -36,8 +36,7 @@ const TemplateSelection = () => {
         {resume.course === "Bakery" && (
           <div
             className={`template-preview relative ${selectedTemplate === "Template2" ? "selected" : ""}`}
-            onMouseEnter={() => handleTemplateSelect("Template2")}
-            onMouseLeave={() => handleTemplateSelect(null)}
+            
           >
             <Template2 />
             {selectedTemplate === "Template2" && (
@@ -53,18 +52,9 @@ const TemplateSelection = () => {
         {!resume.course && (
           <div
             className={`template-preview relative ${selectedTemplate === "Template3" ? "selected" : ""}`}
-            onMouseEnter={() => handleTemplateSelect("Template3")}
-            onMouseLeave={() => handleTemplateSelect(null)}
+           
           >
-            <Template3 />
-            {selectedTemplate === "Template3" && (
-              <button
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-                onClick={() => handleTemplateSelect("Template3")}
-              >
-                Select
-              </button>
-            )}
+           Select a course
           </div>
         )}
       </div>

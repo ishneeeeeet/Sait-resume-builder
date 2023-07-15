@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import { resumeContext } from "../context";
 
-const people = [
+const courses = [
   { name: "Software Development" },
   { name: "Business Administration" },
   { name: "IT services" },
@@ -15,7 +15,7 @@ const people = [
 
 function Course() {
   const { resume, setResume } = useContext(resumeContext);
-  const [selected, setSelected] = useState(people[0]);
+  const [selected, setSelected] = useState(courses[0]);
 
   const handleCourseSelection = (value) => {
     setSelected(value);
@@ -47,15 +47,15 @@ function Course() {
             leaveTo="opacity-0"
           >
             <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {people.map((person, personIdx) => (
+              {courses.map((course, courseIdx) => (
                 <Listbox.Option
-                  key={personIdx}
+                  key={courseIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
                       active ? "bg-[#F50157] text-white" : "text-gray-900"
                     }`
                   }
-                  value={person}
+                  value={course}
                 >
                   {({ selected }) => (
                     <>
@@ -64,7 +64,7 @@ function Course() {
                           selected ? "font-medium" : "font-normal"
                         }`}
                       >
-                        {person.name}
+                        {course.name}
                       </span>
                       {selected ? (
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-white">
