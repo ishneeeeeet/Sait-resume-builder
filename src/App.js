@@ -7,6 +7,10 @@ import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 import TemplateSelection from "./pages/TemplateSelection";
 
+import TemplateOne from "./templates/TemplateOne";
+import TemplateTwo from "./templates/TemplateTwo";
+import TemplateThree from "./templates/TemplateThree";
+
 function App() {
   return (
     <>
@@ -18,6 +22,9 @@ function App() {
         <Route path="/personalinfo" element={<PersonalInfo />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/templateone" element={<TemplateOne/>} />
+        <Route path="/templateTwo" element={<TemplateTwo/>} />
+        <Route path="/templateThree" element={<TemplateThree/>} />
       </Routes>
     </>
   );

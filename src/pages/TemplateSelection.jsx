@@ -2,79 +2,26 @@ import React, { useContext, useState } from "react";
 import { resumeContext } from "../context";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
-import { Template1, Template2, Template3 } from "../templates";
+import TemplateOne from "../templates/TemplateOne";
+import TemplateTwo from "../templates/TemplateTwo";
+import TemplateThree from "../templates/TemplateThree";
 
 const TemplateSelection = () => {
   const { resume, setResume } = useContext(resumeContext);
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
-
-  const handleTemplateSelect = (templateName) => {
-    setSelectedTemplate(templateName);
-    setResume((prevResume) => ({
-      ...prevResume,
-      template: templateName
-    }));
-    console.log(resume);
-  };
-
-  const renderTemplatePreviews = () => {
-    return (
-      <div className="template-preview-container">
-        {resume.course === "IT services" && (
-          <div
-            className={`template-preview relative ${
-              selectedTemplate === "Template1" ? "selected" : ""
-            }`}
-          >
-            <Template1 />
-             
-              <button
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 selected"
-                onClick={() => handleTemplateSelect("Template1")}
-              >
-                Select
-              </button>
-            
-          </div>
-        )}
-        {resume.course === "Bakery" && (
-          <div
-            className={`template-preview relative ${
-              selectedTemplate === "Template2" ? "selected" : ""
-            }`}
-          >
-            <Template2 />
-             
-              <button
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 selected"
-                onClick={() => handleTemplateSelect("Template2")}
-              >
-                Select
-              </button>
-            
-          </div>
-        )}
-        {!resume.course && (
-          <div
-            className={`template-preview relative ${
-              selectedTemplate === "Template3" ? "selected" : ""
-            }`}
-          >
-            Select a course
-          </div>
-        )}
-      </div>
-    );
-  };
 
   return (
     <>
-      <div>Select your resume</div>
-      {renderTemplatePreviews()}
-
-      <Link to="/personalinfo">
-        <Button text={"Next: Personal Info"} />
-      </Link>
+      <div className="flex flex-wrap gap-6">
+        <div className="w-1/3">
+          <TemplateOne />
+        </div>
+        <div className="w-1/3">
+          <TemplateTwo />
+        </div>
+        <div className="w-1/3">
+          <TemplateThree />
+        </div>
+      </div>
     </>
   );
 };
