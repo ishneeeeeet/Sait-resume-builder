@@ -2,7 +2,9 @@ import React, { useContext, useRef } from "react";
 import { resumeContext } from "../context";
 import ReactToPrint from "react-to-print";
 import { ArrowDown } from "react-feather";
-import { Template1, Template2, Template3 } from "../templates";
+import TemplateOne from "../templates/TemplateOne";
+import TemplateTwo from "../templates/TemplateTwo";
+import TemplateThree from "../templates/TemplateThree";
 
 const Resume = () => {
   const { resume } = useContext(resumeContext);
@@ -10,12 +12,12 @@ const Resume = () => {
 
   const renderTemplate = () => {
     switch (resume.template) {
-      case "Template1":
-        return <Template1 resume={resume} />;
-      case "Template2":
-        return <Template2 resume={resume} />;
-      case "Template3":
-        return <Template3 resume={resume} />;
+      case "Templateone":
+        return <TemplateOne resume={resume} />;
+      case "Templatetwo":
+        return <TemplateTwo resume={resume} />;
+      case "Templatethree":
+        return <TemplateThree resume={resume} />;
       default:
         return null;
     }
@@ -23,7 +25,7 @@ const Resume = () => {
 
   return (
     <div>
-      {renderTemplate()}
+      <TemplateTwo resume={resume}/>
       <ReactToPrint
         trigger={() => (
           <button>
@@ -42,12 +44,12 @@ const Resume = () => {
 const PrintContent = React.forwardRef(({ resume }, ref) => {
   const renderTemplate = () => {
     switch (resume.template) {
-      case "Template1":
-        return <Template1 resume={resume} />;
-      case "Template2":
-        return <Template2 resume={resume} />;
-      case "Template3":
-        return <Template3 resume={resume} />;
+      case "templateone":
+        return <TemplateOne resume={resume} />;
+      case "templatetwo":
+        return <TemplateTwo resume={resume} />;
+      case "templatethree":
+        return <TemplateThree resume={resume} />;
       default:
         return null;
     }

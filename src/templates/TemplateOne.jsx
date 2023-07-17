@@ -1,11 +1,11 @@
 import * as React from "react";
-const TemplateOne = (props) => (
+const TemplateOne = ({resume}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     width={612}
     height={792}
-    {...props}
+    
   >
     <style>
       {
@@ -619,7 +619,7 @@ const TemplateOne = (props) => (
                 <g clipPath="url(#clp57)">
                   <text className="ps00" transform="translate(400 185.5)">
                     <tspan xmlSpace="preserve" className="ps03 ps22">
-                      {"Email"}
+                      {resume.email}
                     </tspan>
                   </text>
                 </g>
@@ -785,7 +785,7 @@ const TemplateOne = (props) => (
                 <g clipPath="url(#clp72)">
                   <text className="ps00" transform="translate(35 75)">
                     <tspan xmlSpace="preserve" className="ps02 ps25">
-                      {"AMANDA"}
+                      {resume.fname}
                     </tspan>
                   </text>
                 </g>

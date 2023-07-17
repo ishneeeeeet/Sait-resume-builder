@@ -4,7 +4,7 @@ const resumeContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [resume, setResume] = useState({
-    course: "IT",
+    course: "",
     fname: "",
     lname: "",
   });

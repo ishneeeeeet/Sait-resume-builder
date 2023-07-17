@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { resumeContext } from "../context";
 
 const PersonalInfo = () => {
-  const { setResume } = useContext(resumeContext);
+  const {resume, setResume } = useContext(resumeContext);
 
   const handlenameChange = (event) => {
     const value = event.target.value;
@@ -147,7 +147,9 @@ const PersonalInfo = () => {
       <Link to="/projects">
         <Button text={"Next: Projects"} />
       </Link>
+      {console.log(resume)}
     </div>
+  
   );
 };
 

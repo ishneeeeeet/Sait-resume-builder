@@ -1,11 +1,11 @@
 import * as React from "react";
-const TemplateTwo = (props) => (
+const TemplateTwo = ({resume}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     width={612}
     height={792}
-    {...props}
+    
   >
     <style>
       {
@@ -52,10 +52,10 @@ const TemplateTwo = (props) => (
                 <g clipPath="url(#clp6)">
                   <text className="ps00" transform="translate(62 24)">
                     <tspan x="0,17.604" className="ps02 ps20">
-                      {"AM"}
+                      
                     </tspan>
                     <tspan x="41.202,58.806,78.03,95.715" className="ps02 ps20">
-                      {"ANDA"}
+                      {resume.fname}
                     </tspan>
                   </text>
                 </g>
