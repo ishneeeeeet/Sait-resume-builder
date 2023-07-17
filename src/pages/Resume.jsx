@@ -12,11 +12,11 @@ const Resume = () => {
 
   const renderTemplate = () => {
     switch (resume.template) {
-      case "Templateone":
+      case "templateone":
         return <TemplateOne resume={resume} />;
-      case "Templatetwo":
+      case "templatetwo":
         return <TemplateTwo resume={resume} />;
-      case "Templatethree":
+      case "templatethree":
         return <TemplateThree resume={resume} />;
       default:
         return null;
@@ -25,7 +25,7 @@ const Resume = () => {
 
   return (
     <div>
-      <TemplateTwo resume={resume}/>
+      {renderTemplate()}
       <ReactToPrint
         trigger={() => (
           <button>
