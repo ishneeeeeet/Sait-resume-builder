@@ -9,7 +9,7 @@ const ContextProvider = ({ children }) => {
     lname: "",
   });
 
-  // Provide a value to the resumeContext.Provider
+
   return (
     <resumeContext.Provider value={{ resume, setResume }}>
       {children}
