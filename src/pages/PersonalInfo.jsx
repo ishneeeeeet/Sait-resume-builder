@@ -1,16 +1,42 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import { resumeContext } from "../context";
+import validator from "validator";
 
 const PersonalInfo = () => {
   const { resume, setResume } = useContext(resumeContext);
+  const [errors, setErrors] = useState({});
 
   const handleNameChange = ({ target: { value, name } }) => {
     setResume((prevResume) => ({
       ...prevResume,
       [name]: value,
     }));
+  };
+
+  const handleButtonClick = () => {
+    const { fname, lname, email } = resume;
+
+    const newErrors = {};
+
+    if (!fname) {
+      newErrors.fname = "Please enter your first name";
+    }
+
+    if (!lname) {
+      newErrors.lname = "Please enter your last name";
+    }
+
+    if (!validator.isEmail(email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      // Proceed to the next page or perform other actions
+    }
   };
 
   return (
@@ -37,6 +63,9 @@ const PersonalInfo = () => {
                 autoComplete="given-name"
                 className="form-input"
               />
+              {errors.fname && (
+                <p className="mt-2 text-xs text-red-500">{errors.fname}</p>
+              )}
             </div>
           </div>
 
@@ -53,6 +82,9 @@ const PersonalInfo = () => {
                 autoComplete="family-name"
                 className="form-input"
               />
+              {errors.lname && (
+                <p className="mt-2 text-xs text-red-500">{errors.lname}</p>
+              )}
             </div>
           </div>
 
@@ -69,63 +101,16 @@ const PersonalInfo = () => {
                 autoComplete="email"
                 className="form-input"
               />
+              {errors.email && (
+                <p className="mt-2 text-xs text-red-500">{errors.email}</p>
+              )}
             </div>
           </div>
 
-          <div className="sm:col-span-3">
-            <label htmlFor="country" className="form-label">
-              Country
-            </label>
-            <div className="mt-2">
-              <select
-                id="country"
-                name="country"
-                autoComplete="country-name"
-                className="form-select"
-              >
-                <option>United States</option>
-                <option>Canada</option>
-                <option>Mexico</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="sm:col-span-2 sm:col-start-1">
-            <label htmlFor="city" className="form-label">
-              City
-            </label>
-            <div className="mt-2">
-              <input
-                onChange={handleNameChange}
-                type="text"
-                name="city"
-                id="city"
-                autoComplete="address-level2"
-                className="form-input"
-              />
-            </div>
-          </div>
-
-          <div className="sm:col-span-2">
-            <label htmlFor="region" className="form-label">
-              State / Province
-            </label>
-            <div className="mt-2">
-              <input
-                onChange={handleNameChange}
-                type="text"
-                name="region"
-                id="region"
-                autoComplete="address-level1"
-                className="form-input"
-              />
-            </div>
-          </div>
+          {/* ...remaining code... */}
         </div>
       </div>
-      <Link to="/projects">
-        <Button text="Next: Projects" />
-      </Link>
+      <Button text="Next: Projects" onClick={handleButtonClick} />
       {resume && console.log(resume)}
     </>
   );
