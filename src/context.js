@@ -4,12 +4,12 @@ const resumeContext = createContext();
 
 const ContextProvider = ({ children }) => {
   const [resume, setResume] = useState({
-    course: "",
+    course: "IT",
     fname: "",
     lname: "",
   });
 
-
+  // Provide a value to the resumeContext.Provider
   return (
     <resumeContext.Provider value={{ resume, setResume }}>
       {children}

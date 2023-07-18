@@ -32,7 +32,7 @@ const PersonalInfo = () => {
               <input
                 onChange={handleNameChange}
                 type="text"
-                name="firstName"
+                name="fname"
                 id="first-name"
                 autoComplete="given-name"
                 className="form-input"
@@ -48,7 +48,7 @@ const PersonalInfo = () => {
               <input
                 onChange={handleNameChange}
                 type="text"
-                name="lastName"
+                name="lname"
                 id="last-name"
                 autoComplete="family-name"
                 className="form-input"
