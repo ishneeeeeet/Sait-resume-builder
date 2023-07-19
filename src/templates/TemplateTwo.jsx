@@ -66,8 +66,8 @@ const TemplateTwo = ({resume}) => (
                 </clipPath>
                 <g clipPath="url(#clp7)">
                   <text className="ps00" transform="translate(182.012 24)">
-                    <tspan className="ps03 ps20">{"G"}</tspan>
-                    <tspan x={18.441} className="ps03 ps20">
+                    <tspan className="ps03 ps20">{resume.lname}</tspan>
+                    {/* <tspan x={18.441} className="ps03 ps20">
                       {"E"}
                     </tspan>
                     <tspan x={33.831} className="ps03 ps20">
@@ -84,7 +84,7 @@ const TemplateTwo = ({resume}) => (
                     </tspan>
                     <tspan x={90.45} className="ps03 ps20">
                       {"A"}
-                    </tspan>
+                    </tspan> */}
                   </text>
                 </g>
               </g>
@@ -155,9 +155,9 @@ const TemplateTwo = ({resume}) => (
                 <g clipPath="url(#clp11)">
                   <text className="ps00" transform="translate(437.125 49.5)">
                     <tspan x="0,5.616" className="ps05 ps21">
-                      {"ex"}
+                      {resume.email}
                     </tspan>
-                    <tspan x="10.884,16.632" className="ps05 ps21">
+                    {/* <tspan x="10.884,16.632" className="ps05 ps21">
                       {"am"}
                     </tspan>
                     <tspan x="25.668,31.584,34.332" className="ps05 ps21">
@@ -174,7 +174,7 @@ const TemplateTwo = ({resume}) => (
                     </tspan>
                     <tspan x="92.304,97.836,103.85" className="ps05 ps21">
                       {"com"}
-                    </tspan>
+                    </tspan> */}
                   </text>
                 </g>
               </g>
