@@ -2,8 +2,9 @@ import { Fragment, useContext, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { resumeContext } from "../context";
+import Loading from "./Loading";
 
 const courses = [
   { name: "Software Development" },
@@ -16,7 +17,8 @@ const courses = [
 function Course() {
   const { resume, setResume } = useContext(resumeContext);
   const [selected, setSelected] = useState(courses[0]);
-
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const handleCourseSelection = (value) => {
     setSelected(value);
     setResume((prevResume) => ({
@@ -24,10 +26,16 @@ function Course() {
       course: value.name,
     }));
     console.log(resume);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      navigate("/templateselection"); // Use navigate to navigate to the next page
+    }, 2000); // 3 seconds delay (3000 milliseconds)
   };
 
   return (
-    <div className="fixed top-16 w-72">
+    <>
+    {loading ? <Loading/> : <div className="fixed top-16 w-72">
       Which course at Sait?
       <Listbox value={selected} onChange={handleCourseSelection} >
         <div className="relative mt-1">
@@ -79,11 +87,13 @@ function Course() {
           </Transition>
         </div>
       </Listbox>
-      <Link to="/templateselection">
-        <Button text={"Next: Select Resume"} />
-      </Link>
+     
+        
+      
       {console.log(resume.course)}
-    </div>
+    </div> }
+    
+    </>
   );
 }
 

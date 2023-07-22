@@ -14,7 +14,7 @@ const PersonalInfo = () => {
     }));
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = () => { 
     const { fname, lname, email } = resume;
 
     if (validator.isEmail(email)) {

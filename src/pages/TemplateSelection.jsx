@@ -9,17 +9,17 @@ const templates = [
     name: "templateone",
   },
   {
-    name: "template2",
+    name: "templatetwo",
   },
   {
-    name: "Template3",
+    name: "templatethree",
   },
 ];
 
 function TemplateSelection() {
   const { resume, setResume } = useContext(resumeContext);
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
+ 
 
   const handleClick = (temp) => {
     console.log("clicked");
@@ -28,16 +28,13 @@ function TemplateSelection() {
       template: temp.name,
     }));
     console.log(resume);
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      navigate("/personalinfo"); // Use navigate to navigate to the next page
-    }, 3000); // 3 seconds delay (3000 milliseconds)
+    navigate("/personalinfo")
+    
   };
 
   return (
     <Fragment>
-      {loading && <Loading />} {/* Show the loading component when loading is true */}
+    
       {templates.map((temp, index) => (
         <button
           key={index} // Added a unique key prop for each button in the map function

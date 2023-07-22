@@ -7,11 +7,11 @@ const navigation = [
   { name: "Search resumes", href: "#", current: false },
   { name: "Build your resume", href: "/", current: false },
   {
-    name: "Login/Signup",
-    href: "/",
+    name: "Login",
+    href: "/sign-in",
     current: false,
   },
-  { name: "", href:"/", current: false },
+  { name: "Logout", href:"/sign-out", current: false },
 ];
 
 function classNames(...classes) {
