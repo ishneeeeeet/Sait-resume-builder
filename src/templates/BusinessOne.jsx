@@ -1,11 +1,10 @@
 import * as React from "react";
-const TemplateOne = ({resume}) => (
+const BusinessOne = ({ resume }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     width={612}
     height={792}
-    
   >
     <style>
       {
@@ -1340,4 +1339,4 @@ const TemplateOne = ({resume}) => (
     </g>
   </svg>
 );
-export default TemplateOne;
+export default BusinessOne;

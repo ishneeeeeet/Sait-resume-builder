@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react";
 import { resumeContext } from "../context";
 import ReactToPrint from "react-to-print";
 import { ArrowDown } from "react-feather";
-import TemplateOne from "../templates/TemplateOne";
+import BusinessOne from "../templates/BusinessOne";
 import TemplateTwo from "../templates/TemplateTwo";
 import TemplateThree from "../templates/TemplateThree";
 
@@ -13,7 +13,7 @@ const Resume = () => {
   const renderTemplate = () => {
     switch (resume.template) {
       case "templateone":
-        return <TemplateOne resume={resume} />;
+        return <BusinessOne resume={resume} />;
       case "templatetwo":
         return <TemplateTwo resume={resume} />;
       case "templatethree":
@@ -45,7 +45,7 @@ const PrintContent = React.forwardRef(({ resume }, ref) => {
   const renderTemplate = () => {
     switch (resume.template) {
       case "templateone":
-        return <TemplateOne resume={resume} />;
+        return <BusinessOne resume={resume} />;
       case "templatetwo":
         return <TemplateTwo resume={resume} />;
       case "templatethree":

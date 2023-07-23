@@ -1,25 +1,31 @@
-import { Fragment, useContext, useState } from "react";
-
+import { Fragment, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { resumeContext } from "../context";
-import Loading from "./Loading";
-
-const templates = [
-  {
-    name: "templateone",
-  },
-  {
-    name: "templatetwo",
-  },
-  {
-    name: "templatethree",
-  },
-];
 
 function TemplateSelection() {
   const { resume, setResume } = useContext(resumeContext);
-  const navigate = useNavigate()
- 
+  const navigate = useNavigate();
+  let templates = [];
+
+  switch (resume.course) {
+    case "Software Development":
+      templates = [
+        { name: "templateone" },
+        { name: "templatetwo" },
+        { name: "templatethree" },
+      ];
+      break; // Add break statement to prevent falling through to the next case
+
+    case "Business Administration":
+      templates = [
+        { name: "templatefour" },
+        { name: "templatefive" },
+        { name: "templatesix" },
+      ];
+      break; // Add break statement to prevent falling through to the default case
+    default:
+      break;
+  }
 
   const handleClick = (temp) => {
     console.log("clicked");
@@ -28,13 +34,11 @@ function TemplateSelection() {
       template: temp.name,
     }));
     console.log(resume);
-    navigate("/personalinfo")
-    
+    navigate("/personalinfo");
   };
 
   return (
     <Fragment>
-    
       {templates.map((temp, index) => (
         <button
           key={index} // Added a unique key prop for each button in the map function

@@ -32,7 +32,7 @@ const PersonalInfo = () => {
     <>
       <div className="border-b border-gray-900/10 pb-12">
         <h2 className="text-base font-semibold leading-7 text-gray-900">
-          Personal Information
+          What's the best way for employers to contact you?
         </h2>
         <p className="mt-1 text-sm leading-6 text-gray-600">
           Use a permanent address where you can receive mail.

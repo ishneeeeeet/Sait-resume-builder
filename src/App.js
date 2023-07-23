@@ -6,12 +6,8 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
 import TemplateSelection from "./pages/TemplateSelection";
-
-import TemplateOne from "./templates/TemplateOne";
 import TemplateTwo from "./templates/TemplateTwo";
 import TemplateThree from "./templates/TemplateThree";
-
-
 import {
   ClerkProvider,
   RedirectToSignIn,
@@ -20,6 +16,10 @@ import {
   SignedIn,
   SignedOut,
 } from "@clerk/clerk-react";
+import BusinessOne from "./templates/BusinessOne";
+import Templatesix from "./templates/Templatesix";
+import Templatefour from "./templates/Templatefour";
+import Templatefive from "./templates/Templatefive";
 
 function App() {
   const navigate = useNavigate();
@@ -71,9 +71,12 @@ function App() {
             </>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
-        <Route path="/templateone" element={<TemplateOne />} />
+        <Route path="/templateone" element={<BusinessOne />} />
         <Route path="/templateTwo" element={<TemplateTwo />} />
         <Route path="/templateThree" element={<TemplateThree />} />
+        <Route path="/templatefour" element={<Templatefour />} />
+        <Route path="/templatefive" element={<Templatefive />} />
+        <Route path="/templatesix" element={<Templatesix />} />
       </Routes>
     </ClerkProvider>
   );

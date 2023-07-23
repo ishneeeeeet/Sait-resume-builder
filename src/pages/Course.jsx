@@ -1,17 +1,14 @@
 import { Fragment, useContext, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
-import Button from "../components/Button";
-import { Link, useNavigate } from "react-router-dom";
+
+import {  useNavigate } from "react-router-dom";
 import { resumeContext } from "../context";
 import Loading from "./Loading";
 
 const courses = [
   { name: "Software Development" },
   { name: "Business Administration" },
-  { name: "IT services" },
-  { name: "Architecture" },
-  { name: "Bakery" },
 ];
 
 function Course() {
