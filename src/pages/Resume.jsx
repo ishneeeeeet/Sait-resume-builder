@@ -5,6 +5,9 @@ import { ArrowDown } from "react-feather";
 import BusinessOne from "../templates/BusinessOne";
 import TemplateTwo from "../templates/TemplateTwo";
 import TemplateThree from "../templates/TemplateThree";
+import Templatefour from "../templates/Templatefour";
+import Templatefive from "../templates/Templatefive";
+import Templatesix from "../templates/Templatesix";
 
 const Resume = () => {
   const { resume } = useContext(resumeContext);
@@ -18,6 +21,12 @@ const Resume = () => {
         return <TemplateTwo resume={resume} />;
       case "templatethree":
         return <TemplateThree resume={resume} />;
+      case "templatefour":
+        return <Templatefour resume={resume} />;
+      case "templatefive":
+        return <Templatefive resume={resume} />;
+      case "templatesix":
+        return <Templatesix resume={resume} />;
       default:
         return null;
     }
