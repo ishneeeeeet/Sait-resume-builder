@@ -10,9 +10,18 @@ function TemplateSelection() {
   switch (resume.course) {
     case "Software Development":
       templates = [
-        { name: "templateone" },
-        { name: "templatetwo" },
-        { name: "templatethree" },
+        {
+          name: "templateone",
+          img: "https://i.ibb.co/kx3wPKz/templateone.png",
+        },
+        {
+          name: "templatetwo",
+          img: "https://i.ibb.co/zbj5MGJ/templatetwo.png",
+        },
+        {
+          name: "templatethree",
+          img: "https://i.ibb.co/Sr0Sgmq/templatethree.png",
+        },
       ];
       break; // Add break statement to prevent falling through to the next case
 
@@ -47,7 +56,7 @@ function TemplateSelection() {
         >
           <div className="relative h-[400px] w-[300px] rounded-md">
             <img
-              src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+              src={temp.img}
               alt="AirMax Pro"
               className="z-0 h-full w-full rounded-md object-cover"
             />
