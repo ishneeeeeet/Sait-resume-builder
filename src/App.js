@@ -53,8 +53,22 @@ function App() {
             </>
           }
         />
-        <Route path="/templateselection" element={<TemplateSelection />} />
-        <Route path="/personalinfo" element={<PersonalInfo />} />
+        <Route path="/templateselection" element={<>
+              <SignedIn>
+                <TemplateSelection />
+              </SignedIn>
+              <SignedOut>
+                <RedirectToSignIn />
+              </SignedOut>
+            </>} />
+        <Route path="/personalinfo" element={<>
+              <SignedIn>
+                <PersonalInfo />
+              </SignedIn>
+              <SignedOut>
+                <RedirectToSignIn />
+              </SignedOut>
+            </>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/templateone" element={<TemplateOne />} />
