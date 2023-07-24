@@ -23,15 +23,24 @@ function TemplateSelection() {
           img: "https://i.ibb.co/Sr0Sgmq/templatethree.png",
         },
       ];
-      break; // Add break statement to prevent falling through to the next case
+      break; 
 
     case "Business Administration":
       templates = [
-        { name: "templatefour", img: "https://i.ibb.co/vjDNxBw/templatefour.png" },
-        { name: "templatefive" , img: "https://i.ibb.co/Bq4bT23/templatefive.png" },
-        { name: "templatesix", img: "https://i.ibb.co/KrHXYkk/templatesix.png" },
+        {
+          name: "templatefour",
+          img: "https://i.ibb.co/vjDNxBw/templatefour.png",
+        },
+        {
+          name: "templatefive",
+          img: "https://i.ibb.co/Bq4bT23/templatefive.png",
+        },
+        {
+          name: "templatesix",
+          img: "https://i.ibb.co/KrHXYkk/templatesix.png",
+        },
       ];
-      break; // Add break statement to prevent falling through to the default case
+      break; 
     default:
       break;
   }

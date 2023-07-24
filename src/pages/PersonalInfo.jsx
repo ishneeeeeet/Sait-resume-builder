@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { resumeContext } from "../context";
 import validator from "validator";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const PersonalInfo = () => {
   const { resume, setResume } = useContext(resumeContext);
+  const navigate = useNavigate();
 
   const handleNameChange = ({ target: { value, name } }) => {
     setResume((prevResume) => ({
@@ -13,14 +17,23 @@ const PersonalInfo = () => {
       [name]: value,
     }));
   };
+  const showToastMessage = (message) => {
+    toast.error(message, {
+      position: toast.POSITION.BOTTOM_CENTER,
+      autoClose: 3000, // The toast will be shown for 3 seconds
+    });
+  };
+  
 
-  const handleButtonClick = () => { 
+  const handleButtonClick = () => {
     const { fname, lname, email } = resume;
 
     if (validator.isEmail(email)) {
       console.log("Email is valid");
+      navigate("/projects");
     } else {
       console.log("Email is invalid");
+      showToastMessage("Email is not correct. Please enter a valid email address.");
     }
 
     // Additional validation checks can be added here using the validator package
@@ -30,6 +43,7 @@ const PersonalInfo = () => {
 
   return (
     <>
+    <ToastContainer/>
       <div className="border-b border-gray-900/10 pb-12">
         <h2 className="text-base font-semibold leading-7 text-gray-900">
           What's the best way for employers to contact you?
@@ -138,9 +152,9 @@ const PersonalInfo = () => {
           </div>
         </div>
       </div>
-      <Link to="/projects">
-        <Button text="Next: Projects" onClick={handleButtonClick} />
-      </Link>
+
+      <button onClick={handleButtonClick}>Next: Projects</button>
+
       {resume && console.log(resume)}
     </>
   );
