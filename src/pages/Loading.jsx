@@ -1,11 +1,13 @@
 // Loading.js
-import { Loader, Placeholder } from 'rsuite';
+import "./loader.css"
 import React from "react";
 
 const Loading = () => {
-  return <div>
-  <Placeholder.Paragraph rows={8} />
-  <Loader center content="loading" />
+  return <div className='h-screen flex items-center justify-center'>
+    <div className=' items-center justify-center'>
+
+  <div className='custom-loader'></div>
+    </div>
 </div> // Replace this with your loading animation/UI
 };
 

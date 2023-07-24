@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { resumeContext } from "../context";
 
@@ -23,7 +23,7 @@ function TemplateSelection() {
           img: "https://i.ibb.co/Sr0Sgmq/templatethree.png",
         },
       ];
-      break; 
+      break;
 
     case "Business Administration":
       templates = [
@@ -40,28 +40,33 @@ function TemplateSelection() {
           img: "https://i.ibb.co/KrHXYkk/templatesix.png",
         },
       ];
-      break; 
+      break;
+
     default:
       break;
   }
 
   const handleClick = (temp) => {
-    console.log("clicked");
     setResume((prevResume) => ({
       ...prevResume,
       template: temp.name,
     }));
-    console.log(resume);
     navigate("/personalinfo");
   };
 
   return (
-    <Fragment>
+    <>
+  <div className=" flex items-center justify-center">
+  <span >Slelect from the curated templates</span>
+  </div>
+    <div className="flex flex-wrap justify-center items-center">
+
+      
       {templates.map((temp, index) => (
         <button
-          key={index} // Added a unique key prop for each button in the map function
+          key={index}
           onClick={() => handleClick(temp)}
-          className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+          className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 mx-4 my-4"
         >
           <div className="relative h-[400px] w-[300px] rounded-md">
             <img
@@ -72,7 +77,6 @@ function TemplateSelection() {
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
             <div className="absolute bottom-4 left-4 text-left">
               <h1 className="text-lg font-semibold text-white">{temp.name}</h1>
-
               <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
                 View Profile &rarr;
               </button>
@@ -80,7 +84,8 @@ function TemplateSelection() {
           </div>
         </button>
       ))}
-    </Fragment>
+    </div>
+    </>
   );
 }
 

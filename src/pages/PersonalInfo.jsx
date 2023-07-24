@@ -101,55 +101,25 @@ const PersonalInfo = () => {
             </div>
           </div>
 
-          <div className="sm:col-span-3">
-            <label htmlFor="country" className="form-label">
-              Country
-            </label>
-            <div className="mt-2">
-              <select
-                id="country"
-                name="country"
-                autoComplete="country-name"
-                className="form-select"
-              >
-                <option>United States</option>
-                <option>Canada</option>
-                <option>Mexico</option>
-              </select>
-            </div>
-          </div>
+         
 
           <div className="sm:col-span-2 sm:col-start-1">
-            <label htmlFor="city" className="form-label">
-              City
+            <label htmlFor="linkedin" className="form-label">
+              Linkedin URL
             </label>
             <div className="mt-2">
               <input
                 onChange={handleNameChange}
                 type="text"
-                name="city"
+                name="linkedin"
                 id="city"
-                autoComplete="address-level2"
+                autoComplete=""
                 className="form-input"
               />
             </div>
           </div>
 
-          <div className="sm:col-span-2">
-            <label htmlFor="region" className="form-label">
-              State / Province
-            </label>
-            <div className="mt-2">
-              <input
-                onChange={handleNameChange}
-                type="text"
-                name="region"
-                id="region"
-                autoComplete="address-level1"
-                className="form-input"
-              />
-            </div>
-          </div>
+          
         </div>
       </div>
 

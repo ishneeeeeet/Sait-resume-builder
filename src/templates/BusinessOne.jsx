@@ -546,7 +546,7 @@ const BusinessOne = ({ resume }) => (
                 <g clipPath="url(#clp51)">
                   <text className="ps00" transform="translate(400 151.5)">
                     <tspan xmlSpace="preserve" className="ps03 ps22">
-                      {"Address"}
+                      {"Linkedin"}
                     </tspan>
                   </text>
                 </g>
@@ -618,7 +618,7 @@ const BusinessOne = ({ resume }) => (
                 <g clipPath="url(#clp57)">
                   <text className="ps00" transform="translate(400 185.5)">
                     <tspan xmlSpace="preserve" className="ps03 ps22">
-                      {resume.email}
+                      {"Email"}
                     </tspan>
                   </text>
                 </g>
@@ -642,7 +642,7 @@ const BusinessOne = ({ resume }) => (
                 <g clipPath="url(#clp59)">
                   <text className="ps00" transform="translate(429.762 185.5)">
                     <tspan xmlSpace="preserve" className="ps03 ps21">
-                      {"example@example.com"}
+                      {resume.email}
                     </tspan>
                   </text>
                 </g>
@@ -731,7 +731,7 @@ const BusinessOne = ({ resume }) => (
                 <g clipPath="url(#clp68)">
                   <text className="ps00" transform="translate(400 427.5)">
                     <tspan xmlSpace="preserve" className="ps03 ps22">
-                      {"American\xA0University"}
+                      {"SAIT"}
                     </tspan>
                   </text>
                 </g>
@@ -764,7 +764,7 @@ const BusinessOne = ({ resume }) => (
                         fontSize: 10,
                       }}
                     >
-                      {"Washington\xA0D.C."}
+                      {"Calgary\xA0AB"}
                     </tspan>
                   </text>
                 </g>
@@ -799,7 +799,7 @@ const BusinessOne = ({ resume }) => (
                       x="0,20.592,42.192,52.74,72.18"
                       className="ps02 ps25"
                     >
-                      {"SPITE"}
+                      {resume.lname}
                     </tspan>
                   </text>
                 </g>
