@@ -3,8 +3,8 @@ const BusinessOne = ({ resume }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    width={612}
-    height={792}
+    width={600}
+    height={692}
   >
     <style>
       {
@@ -695,7 +695,7 @@ const BusinessOne = ({ resume }) => (
                 <g clipPath="url(#clp65)">
                   <text className="ps00" transform="translate(400 410.5)">
                     <tspan xmlSpace="preserve" className="ps03 ps23">
-                      {"Master\xA0of\xA0Arts"}
+                      {"Information"}
                     </tspan>
                   </text>
                 </g>
@@ -707,7 +707,7 @@ const BusinessOne = ({ resume }) => (
                 <g clipPath="url(#clp66)">
                   <text className="ps00" transform="translate(463.537 410.5)">
                     <tspan xmlSpace="preserve" x="0,2.4" className="ps03 ps21">
-                      {", "}
+                      {""}
                     </tspan>
                   </text>
                 </g>
@@ -719,7 +719,7 @@ const BusinessOne = ({ resume }) => (
                 <g clipPath="url(#clp67)">
                   <text className="ps00" transform="translate(468.587 410.5)">
                     <tspan xmlSpace="preserve" className="ps03 ps23">
-                      {"Film\xA0Production"}
+                      {"Technology"}
                     </tspan>
                   </text>
                 </g>

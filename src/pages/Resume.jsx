@@ -33,12 +33,14 @@ const Resume = () => {
   };
 
   return (
-    <div>
-      {renderTemplate()}
+    <div className="flex flex-row items-center py-8">
+      <div className=" ml-96 max-w-2xl bg-white shadow-2xl rounded-lg p-8">
+        {renderTemplate()}
+      </div>
       <ReactToPrint
         trigger={() => (
-          <button>
-            Download <ArrowDown />
+          <button className=" ml-20 mt-4 bg-[#F50157] hover: [#F50157] text-white font-semibold py-2 px-4 rounded-lg">
+            Download <ArrowDown className="inline-block ml-1" />
           </button>
         )}
         content={() => componentRef.current}

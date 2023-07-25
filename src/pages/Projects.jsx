@@ -16,11 +16,13 @@ const Projects = () => {
   };
   return (
     <div className="space-x-12">
-      <div className="border-b border-gray-900/10 pb-12">
-        <h2 className="text-base font-semibold leading-7 text-gray-900">
-          Tell us about your capstone project
-        </h2>
-        <p className="mt-1 text-sm leading-6 text-gray-600"></p>
+      <div className=" border-b border-gray-900/10 pb-12">
+        <div className="mt-9 flex items-center justify-center">
+          <h2 className="text-base font-semibold leading-7 text-gray-900">
+            Tell us about your capstone project
+          </h2>
+        </div>
+        
 
         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-3">
@@ -32,7 +34,7 @@ const Projects = () => {
             </label>
             <div className="mt-2">
               <input
-              onChange={handlenameChange}
+                onChange={handlenameChange}
                 type="text"
                 name="project"
                 id="first-name"
@@ -51,7 +53,7 @@ const Projects = () => {
             </label>
             <div className="mt-2">
               <input
-              onChange={handlenameChange}
+                onChange={handlenameChange}
                 id="email"
                 name="technology"
                 type="text"
