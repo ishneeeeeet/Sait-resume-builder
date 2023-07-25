@@ -32,14 +32,17 @@ function TemplateSelection() {
       templates = [
         {
           name: "templatefour",
+          display: "Template 1",
           img: "https://i.ibb.co/vjDNxBw/templatefour.png",
         },
         {
           name: "templatefive",
+          display: "Template 2",
           img: "https://i.ibb.co/Bq4bT23/templatefive.png",
         },
         {
           name: "templatesix",
+          display: "Template 3",
           img: "https://i.ibb.co/KrHXYkk/templatesix.png",
         },
       ];

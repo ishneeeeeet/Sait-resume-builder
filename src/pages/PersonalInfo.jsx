@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
+
 import { resumeContext } from "../context";
 import validator from "validator";
 import { ToastContainer, toast } from "react-toastify";
@@ -26,7 +26,7 @@ const PersonalInfo = () => {
   const handleButtonClick = () => {
     const { fname, lname, email } = resume;
 
-    if (validator.isEmail(email) && email != "") {
+    if (validator.isEmail(email) && email !== " ") {
       console.log("Email is valid");
       navigate("/projects");
     } else {

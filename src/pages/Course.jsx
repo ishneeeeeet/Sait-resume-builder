@@ -27,7 +27,7 @@ function Course() {
     setTimeout(() => {
       setLoading(false);
       navigate("/templateselection"); // Use navigate to navigate to the next page
-    }, 1000); // 3 seconds delay (3000 milliseconds)
+    }, 3000); // 3 seconds delay (3000 milliseconds)
   };
 
   return (
